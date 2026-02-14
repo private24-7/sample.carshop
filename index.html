@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ARVIY</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #060421;
+  color: #AEAEAE;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/* パスワード画面 */
+
+#lockScreen {
+  position: fixed;
+  inset: 0;
+  background: #060421;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lock-box {
+  border: 1px solid #768091;
+  padding: 48px 56px;
+  text-align: center;
+}
+
+.lock-box h2 {
+  color: #AEAEAE;
+  margin-bottom: 24px;
+  letter-spacing: 4px;
+}
+
+.lock-box input {
+  background: #222740;
+  border: 1px solid #768091;
+  color: #AEAEAE;
+  padding: 12px;
+  width: 240px;
+  margin-bottom: 18px;
+}
+
+.lock-box button {
+  background: none;
+  border: 1px solid #768091;
+  color: #768091;
+  padding: 10px 36px;
+  cursor: pointer;
+}
+
+
+/* ヘッダー */
+
+header {
+  background: #222740;
+  height: 110px;
+}
+
+.header-inner {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 78px;
+}
+
+nav {
+  padding-top: 14px;
+}
+
+nav a {
+  color: #768091;
+  text-decoration: none;
+  margin: 0 28px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.menu {
+  color: #768091;
+  font-size: 36px;
+  cursor: pointer;
+  padding-top: 8px;
+}
+
+
+/* メイン */
+
+main {
+  max-width: 1280px;
+  margin: 100px auto 0;
+}
+
+
+/* トップ写真 */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  padding: 0 40px;
+  align-items: flex-end;
+}
+
+.hero-left img {
+  width: 720px;
+  display: block;
+}
+
+.hero-right {
+  position: relative;
+}
+
+.hero-right img {
+  width: 280px;
+  display: block;
+}
+
+.pickup-title {
+  position: absolute;
+  top: -48px;
+  left: 49%;
+  transform: translateX(-50%);
+  color: #768091;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+
+/* お知らせ */
+
+.announcement {
+  margin-top: 140px;
+}
+
+.announcement h2 {
+  color: #768091;
+  margin-bottom: 24px;
+  padding-left: 90px;
+}
+
+.announcement-box {
+  background: #222740;
+  border: 1px solid #AEAEAE;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 26px 64px;
+  cursor: pointer;
+}
+
+.row:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.row:not(:last-child) {
+  border-bottom: 1px solid #AEAEAE;
+}
+
+.date {
+  width: 160px;
+}
+
+.text {
+  flex: 1;
+}
+
+
+/* フッター */
+
+footer {
+  margin-top: 180px;
+  padding-bottom: 140px;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 150px;
+}
+
+.footer-col h3 {
+  color: #768091;
+  margin-bottom: 18px;
+}
+
+.footer-col p {
+  color: #768091;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ロック画面 -->
+
+<div id="lockScreen">
+  <div class="lock-box">
+    <h2>ARVIY</h2>
+    <input type="password" id="password" placeholder="パスワード">
+    <button onclick="unlock()">ENTER</button>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo.png" alt="ARVIY">
+    </div>
+
+    <nav>
+      <a>Lineup</a>
+      <a>Accessories</a>
+      <a>Concept</a>
+    </nav>
+
+    <div class="menu" id="menuBtn">☰</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-left">
+      <img src="hero2.jpg" alt="hero">
+    </div>
+
+    <div class="hero-right">
+      <p class="pickup-title">3月のピックアップ</p>
+      <img src="pickup.jpg" alt="pickup">
+    </div>
+  </section>
+
+  <section class="announcement">
+    <h2>Announcement</h2>
+    <div class="announcement-box">
+      <div class="row">
+        <div class="date">2026.03.05</div>
+        <div class="text">新型モデルを発表しました</div>
+      </div>
+      <div class="row">
+        <div class="date">2026.02.18</div>
+        <div class="text">海外ディーラーとの契約を締結しました</div>
+      </div>
+      <div class="row">
+        <div class="date">2026.02.10</div>
+        <div class="text">展示会出展のお知らせ</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>Products</h3>
+      <p>Lineup</p>
+      <p>Accessories</p>
+    </div>
+    <div class="footer-col">
+      <h3>Company</h3>
+      <p>企業情報</p>
+      <p>ARVIYについて</p>
+      <p>採用情報</p>
+    </div>
+    <div class="footer-col">
+      <h3>Support</h3>
+      <p>お問い合わせ</p>
+      <p>リコール情報</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script>
+function unlock() {
+  const pw = document.getElementById("password").value;
+  if (pw === "private.K_yama.2512") {
+    document.getElementById("lockScreen").style.display = "none";
+  } else {
+    alert("パスワードが違います");
+  }
+}
+
+
+/* ダミー */
+
+document.querySelectorAll('nav a, .row, footer p, #menuBtn')
+  .forEach(el => el.addEventListener('click', () => alert('（仮）')));
+</script>
+
+</body>
+</html>
